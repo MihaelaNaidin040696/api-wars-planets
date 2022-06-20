@@ -1,0 +1,58 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="5">
+            <item index="0" class="java.lang.String" itemvalue="url_for(" />
+            <item index="1" class="java.lang.String" itemvalue="%}}" />
+            <item index="2" class="java.lang.String" itemvalue="else" />
+            <item index="3" class="java.lang.String" itemvalue="{{%" />
+            <item index="4" class="java.lang.String" itemvalue="cal" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="right" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="15">
+            <item index="0" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="1" class="java.lang.String" itemvalue="colorama" />
+            <item index="2" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="3" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="4" class="java.lang.String" itemvalue="itsdangerous" />
+            <item index="5" class="java.lang.String" itemvalue="click" />
+            <item index="6" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="7" class="java.lang.String" itemvalue="Flask" />
+            <item index="8" class="java.lang.String" itemvalue="pathspec" />
+            <item index="9" class="java.lang.String" itemvalue="platformdirs" />
+            <item index="10" class="java.lang.String" itemvalue="black" />
+            <item index="11" class="java.lang.String" itemvalue="mypy-extensions" />
+            <item index="12" class="java.lang.String" itemvalue="psycopg2-binary" />
+            <item index="13" class="java.lang.String" itemvalue="python-dotenv" />
+            <item index="14" class="java.lang.String" itemvalue="tomli" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
