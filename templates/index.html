@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script src="{{ url_for('static', filename='index.js') }}" defer></script>
-        <link
+<head>
+    <script src="{{ url_for('static', filename='index.js') }}" defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
             rel="stylesheet"
             href="{{ url_for('static', filename='main.css') }}"
-        />
-        <meta charset="UTF-8" />
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1.0" />
-        <title>Planets</title>
-    </head>
-    <body>
-        <h1>Star Wars universe planets</h1>
-        <button id="prev">Previous</button>
-        <button id="next">Next</button>
-        <br><br>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Diameter</th>
-                    <th>Climate</th>
-                    <th>Terrain</th>
-                    <th>Surface Water Percentage</th>
-                    <th>Population</th>
-                    <th>Residents</th>
-                </tr>
-            </thead>
-            <tbody id="data"></tbody>
-        </table>
-    </body>
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Planets</title>
+</head>
+<body>
+<h1>Star Wars universe planets</h1>
+<button type="button" class="btn btn-secondary" id="prev">Previous</button>
+<button type="button" class="btn btn-secondary" id="next">Next</button>
+<br><br>
+<div id="container">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Diameter</th>
+            <th>Climate</th>
+            <th>Terrain</th>
+            <th>Surface Water Percentage</th>
+            <th>Population</th>
+            <th>Residents</th>
+        </tr>
+        </thead>
+        <tbody id="data"></tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="modalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Height</th>
+                        <th>Mass</th>
+                        <th>Hair color</th>
+                        <th>Skin color</th>
+                        <th>Eye color</th>
+                        <th>Birth year</th>
+                        <th>Gender</th>
+                    </tr>
+                    </thead>
+                    <tbody id="resident"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>
