@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, url_for, redirect, session
+from flask import Flask, render_template, request, url_for, redirect, session, jsonify
 import data_manager
 import hash_pass
 import re
+import ast
 
 app = Flask(__name__)
 app.secret_key = "_5#y2LF4Q8z\xec]/"
@@ -62,6 +63,13 @@ def login():
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+
+@app.route('/vote', methods=['GET', 'POST'])
+def vote_planet():
+    data = ast.literal_eval(request.data.decode("utf-8"))
+    data_manager.insert_vote(int(data.get('id')), data.get('name'), int(session['id']))
+    return jsonify(added=True)
 
 
 if __name__ == '__main__':

@@ -5,6 +5,17 @@ let next_url = "";
 let previous_url = "";
 let allPlanetsResidents = [];
 
+
+
+function logged_in() {
+    const username = document.querySelector('#username');
+    window.sessionStorage.setItem('logged_in', username.value);
+}
+
+function logged_out() {
+    window.sessionStorage.removeItem('logged_in');
+}
+
 async function getData(url) {
     const response = await fetch(url);
     let data = await response.json();
@@ -62,6 +73,9 @@ function insertData(planets) {
         planetsTable += "<td>" + planet.surface_water + "</td>";
         planetsTable += "<td>" + planet.population +"</td>";
         planetsTable += "<td>" + planet.residents + "</td>";
+        if (window.sessionStorage.getItem('logged_in')){
+            planetsTable += `<td><button type="button" onclick="getPlanetNameAndID('${planet.url}','${planet.name}')" class="btn btn-secondary btn-sm" >` + 'Vote' + `</button></td>`;
+        }
         planetsTable += "</tr>";
     }
     document.querySelector('#data').innerHTML = planetsTable;
@@ -112,4 +126,22 @@ async function insertResidents(planetUrl, planetName) {
     }
     document.querySelector('#resident').innerHTML = residentsTable;
     document.querySelector('.modal-title').innerHTML = "Residents of " + planetName;
+}
+
+function getPlanetNameAndID(url,name){
+    let id = url.split('planets/')[1].substring(0,1)
+    let data = {id: id,
+        name: name}
+    insertPlanetVote(data).then();
+
+}
+
+async function insertPlanetVote(data) {
+    await fetch('/vote', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
 }

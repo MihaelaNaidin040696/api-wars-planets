@@ -30,6 +30,10 @@ li a {
   text-decoration: none;
 }
 
+li a:hover {
+  color: aqua;
+}
+
 p {
   color: white;
   margin-right: 10px;

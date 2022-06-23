@@ -16,7 +16,7 @@
 <body>
 <ul>
     {% if session['loggedin'] %}
-        <li><a href="{{url_for('logout')}}">Logout</a></li>
+        <li><a href="{{url_for('logout')}}" onclick="logged_out()">Logout</a></li>
         <li style="float:right"><p>Signed in as {{ session['username'] }}</p></li>
     {% else %}
         <li><a href="{{url_for('register')}}">Register</a></li>
