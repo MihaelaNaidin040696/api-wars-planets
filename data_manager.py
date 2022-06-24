@@ -37,3 +37,15 @@ def insert_vote(cursor, planet_id, planet_name, user_id):
         "VALUES (%(planet_name)s, %(user_id)s, %(planet_id)s);",
         {'planet_id': planet_id, "planet_name": planet_name, "user_id": user_id}
     )
+
+
+@database_common.connection_handler
+def get_voting_statistics(cursor, user_id):
+    cursor.execute(
+        "SELECT planet_name, COUNT(planet_name) "
+        "FROM planet_votes "
+        "WHERE user_id = %(user_id)s "
+        "GROUP BY planet_name;",
+        {'user_id': user_id}
+    )
+    return cursor.fetchall()
