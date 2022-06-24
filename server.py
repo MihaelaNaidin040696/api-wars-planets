@@ -72,5 +72,11 @@ def vote_planet():
     return jsonify(added=True)
 
 
+@app.route('/voting-statistics')
+def voting_statistics():
+    statistics = data_manager.get_voting_statistics(session['id'])
+    return jsonify(statistics)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

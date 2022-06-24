@@ -133,7 +133,6 @@ function getPlanetNameAndID(url,name){
     let data = {id: id,
         name: name}
     insertPlanetVote(data).then();
-
 }
 
 async function insertPlanetVote(data) {
@@ -144,4 +143,22 @@ async function insertPlanetVote(data) {
         },
         body: JSON.stringify(data),
     })
+}
+
+async function getVoteStatistics() {
+    const response = await fetch('/voting-statistics');
+    const data = await response.json();
+    console.log(data);
+    insertVotes(data);
+}
+
+function insertVotes(data) {
+    let votesTable ='';
+    for (let vote of data) {
+        votesTable += "<tr>";
+        votesTable += "<td>" + vote.planet_name + "</td>";
+        votesTable += "<td>" + vote.count + "</td>";
+        votesTable += "</tr>";
+    }
+     document.querySelector('#votes').innerHTML = votesTable;
 }
