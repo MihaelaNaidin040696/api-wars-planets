@@ -39,3 +39,11 @@ p {
   margin-right: 10px;
   margin-top: 15px;
 }
+
+.bottom {
+  color: black;
+}
+
+#login, #register {
+  text-align: center;
+}

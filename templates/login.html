@@ -3,14 +3,16 @@
 {% block title %}Login{% endblock title %}
 
 {% block content %}
-<h2> Login </h2>
-<form action="{{ url_for('login') }}"
-      method="post"
-      enctype="multipart/form-data">
-    <div class="msg">{{ msg }}</div>
-    <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
-    <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
-    <button class="button_btn" onclick="logged_in()" type="submit">Login</button>
-</form>
-<p class="bottom">Don't have an account?  <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+    <div id="login">
+        <h2> Login </h2>
+        <form action="{{ url_for('login') }}"
+              method="post"
+              enctype="multipart/form-data">
+            <div class="msg">{{ msg }}</div>
+            <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+            <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
+            <button class="button_btn" onclick="logged_in()" type="submit">Login</button>
+        </form>
+        <p class="bottom">Don't have an account?  <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+    </div>
 {% endblock %}
