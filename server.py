@@ -54,8 +54,7 @@ def login():
             session['id'] = user_credentials['id']
             session['username'] = user_credentials['username']
             return redirect(url_for('index'))
-        else:
-            msg = 'Wrong username or password.'
+        msg = 'Wrong username or password.'
     return render_template('login.html', msg=msg)
 
 
@@ -74,8 +73,7 @@ def vote_planet():
 
 @app.route('/voting-statistics')
 def voting_statistics():
-    statistics = data_manager.get_voting_statistics(session['id'])
-    return jsonify(statistics)
+    return jsonify(data_manager.get_voting_statistics(session['id']))
 
 
 if __name__ == '__main__':

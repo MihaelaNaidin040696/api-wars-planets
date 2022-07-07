@@ -148,7 +148,6 @@ async function insertPlanetVote(data) {
 async function getVoteStatistics() {
     const response = await fetch('/voting-statistics');
     const data = await response.json();
-    console.log(data);
     insertVotes(data);
 }
 
