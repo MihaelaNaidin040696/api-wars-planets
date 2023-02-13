@@ -1,0 +1,49 @@
+table, th, td {
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+}
+
+#prev,
+#next,
+h1 {
+  margin-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: aqua;
+}
+
+p {
+  color: white;
+  margin-right: 10px;
+  margin-top: 15px;
+}
+
+.bottom {
+  color: black;
+}
+
+#login, #register {
+  text-align: center;
+}
